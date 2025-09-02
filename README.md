@@ -1,25 +1,39 @@
-# CDCgov GitHub Organization Open Source Project Template
-
-**Template for clearance: This project serves as a template to aid projects in starting up and moving through clearance procedures. To start, create a new repository and implement the required [open practices](open_practices.md), train on and agree to adhere to the organization's [rules of behavior](rules_of_behavior.md), and [send a request through the create repo form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) using language from this template as a Guide.**
+# Dengue epidemic alert thresholds
 
 **General disclaimer** This repository was created for use by CDC programs to collaborate on public health related projects in support of the [CDC mission](https://www.cdc.gov/about/cdc/#cdc_about_cio_mission-our-mission).  GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise. 
 
-## Access Request, Repo Creation Request
-
-* [CDC GitHub Open Project Request Form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) _[Requires a CDC Office365 login, if you do not have a CDC Office365 please ask a friend who does to submit the request on your behalf. If you're looking for access to the CDCEnt private organization, please use the [GitHub Enterprise Cloud Access Request form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUQjVJVDlKS1c0SlhQSUxLNVBaOEZCNUczVS4u).]_
-
-## Related documents
-
-* [Open Practices](open_practices.md)
-* [Rules of Behavior](rules_of_behavior.md)
-* [Thanks and Acknowledgements](thanks.md)
-* [Disclaimer](DISCLAIMER.md)
-* [Contribution Notice](CONTRIBUTING.md)
-* [Code of Conduct](code-of-conduct.md)
 
 ## Overview
 
-Describe the purpose of your project. Add additional sections as necessary to help collaborators and potential collaborators understand and use your project.
+This repository supports the manuscript *"Dengue epidemic alert thresholds: a tool for surveillance and epidemic detection"* (preprint posted October 28, 2024). It provides code and supporting documentation for deriving weekly dengue epidemic thresholds using historical case data and a statistical modeling framework. The approach informs real-time public health decision-making.
+
+### Background
+
+Dengue fever remains a critical public health concern in Puerto Rico and other endemic regions. Our method uses a weekly **intercept-only negative binomial regression model**, fit to decades of historical data, to estimate threshold values (60th, 75th, and 90th percentiles). These thresholds enable objective, data-driven identification of epidemic weeks and timely alerts.([ResearchGate][1])
+
+### Repository Contents
+
+* **`/data/weekly_data_dengue_epidemic_alert_thresholds_1986_June2024.csv`** – (.csv file) De-identified, cleaned historical weekly dengue case data, Puerto Rico 1986-June 2024.
+* **`/code/threshold_model.R`** - (.R file) Primary R script for running thresholds and plotting figures
+  * Fits the intercept-only negative binomial model using data from January 1986 to June 2024.
+  * Calculates percentile-based thresholds (60%, 75%, 90%).
+  * Generates graphs.
+
+### Usage Instructions
+
+1. **Download data**: Either 1) use example data currently in `/data` folder (`weekly_data_dengue_epidemic_alert_thresholds_1986_June2024.csv`) or 2) place your own de-identified, week-level dengue case data in the `/data` folder, as an R-readable file (e.g., CSV, RDS).
+2. **Run the model**: Execute `threshold_model.R`. This will compute thresholds and generate key figures.
+
+
+These examples demonstrate practical impact and assist in bridging surveillance data with actionable public health responses.
+
+### Citation
+
+If you use these materials or replicate the modeling approach, please cite:
+Thayer MB, Marzan-Rodriguez M, Torres Aponte J, et al. *Dengue epidemic alert thresholds: a tool for surveillance and epidemic detection*. **medRxiv** (preprint). 2024. DOI:10.1101/2024.10.22.24315684.
+
+
+
   
 ## Public Domain Standard Notice
 This repository constitutes a work of the United States Government and is not
@@ -42,8 +56,6 @@ This source code in this repository is distributed in the hope that it will be u
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE. See the Apache Software License for more details.
 
-You should have received a copy of the Apache Software License along with this
-program. If not, see http://www.apache.org/licenses/LICENSE-2.0.html
 
 The source code forked from other open source projects will inherit its license.
 

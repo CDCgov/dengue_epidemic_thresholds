@@ -1,0 +1,17 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Dengue Epidemic Alert Thresholds
+type: software
+authors:
+  - given-names: Maile
+    family-names: Thayer
+    email: ruu6@cdc.gov
+    orcid: 'https://orcid.org/0000-0001-6952-0440'
+identifiers:
+  - type: doi
+    value: 10.1101/2024.10.22.24315684
+repository-code: 'https://github.com/CDCgov/dengue_epidemic_thresholds'
+license: Apache-2.0
+date-released: '2025-09-02'
