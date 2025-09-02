@@ -9,7 +9,7 @@ This repository supports the manuscript *"Dengue epidemic alert thresholds: a to
 
 ### Background
 
-Dengue fever remains a critical public health concern in Puerto Rico and other endemic regions. Our method uses a weekly **intercept-only negative binomial regression model**, fit to decades of historical data, to estimate threshold values (60th, 75th, and 90th percentiles). These thresholds enable objective, data-driven identification of epidemic weeks and timely alerts.([ResearchGate][1])
+Dengue fever remains a critical public health concern in Puerto Rico and other endemic regions. Our method uses a weekly **intercept-only negative binomial regression model**, fit to decades of historical data, to estimate threshold values (60th, 75th, and 90th percentiles). These thresholds enable objective, data-driven identification of epidemic weeks and timely alerts.
 
 ### Repository Contents
 
@@ -18,6 +18,7 @@ Dengue fever remains a critical public health concern in Puerto Rico and other e
   * Fits the intercept-only negative binomial model using data from January 1986 to June 2024.
   * Calculates percentile-based thresholds (60%, 75%, 90%).
   * Generates graphs.
+* **`/.github/`** - (.md files) issue and pull request templates
 
 ### Usage Instructions
 
